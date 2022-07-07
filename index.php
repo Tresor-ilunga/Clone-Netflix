@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<title>Netflix</title>
 	<link rel="stylesheet" type="text/css" href="design/default.css">
-	<link rel="icon" type="image/pngn" href="img/favicon.png">
+	<link rel="icon" type="image/png" href="./assets/favicon.png">
 </head>
 <body>
 
-	<?php include('src/header.php'); ?>
+	<?php require_once('src/header.php'); ?>
 	
 	<section>
 		<div id="login-body">
@@ -47,6 +47,6 @@
 		</div>
 	</section>
 
-	<?php include('src/footer.php'); ?>
+	<?php require_once('src/footer.php'); ?>
 </body>
 </html>
