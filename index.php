@@ -2,6 +2,8 @@
 
 	session_start();
 
+	require_once('src/option.php');
+
 	if(!empty($_POST['email']) && !empty($_POST['password'])){
 
 		// Connexion à la bdd
@@ -44,7 +46,14 @@
 				$_SESSION['connect'] = 1;
 				$_SESSION['email'] = $user['email'];
 
+				if(isset($_POST['auto'])){
+
+					setcookie('auth', $user['secret'], time() + 365*24*3600, '/', null, false, true);
+
+				}
+
 				header('location: index.php?success=1');
+				exit();
 			}
 			else{
 

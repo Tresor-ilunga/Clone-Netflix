@@ -1,6 +1,14 @@
 <?php
 
 	session_start();
+	require_once('src/option.php');
+
+	// Verifier si la SESSION connect existe
+	if(isset($_SESSION['connect'])){
+
+		header('location: index.php');
+		exit();
+	}
 
 	//Vérification du formulaire
 	if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_two'])){
